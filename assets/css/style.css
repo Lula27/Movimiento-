@@ -1,0 +1,16 @@
+body{ 
+	background-color: #330033; 
+ }
+
+ .maker {
+ 	color: #ffffff; 
+ }
+
+ #movemaker {
+ 	float: left;
+ }
+
+ #mbutton {
+ 	clear: all;
+ 	float: left;  
+ }
