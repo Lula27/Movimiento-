@@ -1,6 +1,16 @@
+h1 {
+	text-align: center;
+	font-weight: bold;
+}
+
+
 body{ 
-	background-color: #330033; 
+	background-color: #C8E6C9; 
  }
+
+.jumbotron {
+	background-color: #1B5E20; 
+}
 
  .maker {
  	color: #ffffff; 
