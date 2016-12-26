@@ -1,27 +1,14 @@
-h1 {
-	text-align: center;
-	font-weight: bold;
-	font-size: 50px; 
-}
-
-
 body{ 
 	background-color: #C8E6C9; 
  }
 
-.jumbotron {
-	background-color: #1B5E20; 
-}
-
- .maker {
- 	color: #ffffff; 
- }
-
  #movemaker {
  	float: left;
+ 	margin: 10px;
  }
 
  #mbutton {
  	clear: all;
- 	float: left;  
+ 	float: left;
+ 	margin-bottom: 30px;   
  }
