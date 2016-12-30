@@ -1,5 +1,9 @@
 $(document).ready(function(giftastic) { 
 
+	// create variable to store user input in form 
+		var actions = ["dance", "sleep", "laugh"]; 
+
+
 	$("#mbutton").click(function(buttons) {
 
 	// Prevent page from refreshing!
@@ -17,7 +21,9 @@ $(document).ready(function(giftastic) {
 
 		})
 
-	
 	});
+
+	console.log(actions); 
+	
 
 }); 
