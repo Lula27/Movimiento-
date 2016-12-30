@@ -8,22 +8,40 @@ $(document).ready(function(giftastic) {
 
 	// Prevent page from refreshing!
 	buttons.preventDefault()
-		// console.log("Success"); 
+		
 
-		$.ajax({
+	var a = $(".form-control").val(); 
 
-			url: "http://api.giphy.com/v1/gifs/search?q=" + $(".form-control").val() + "&api_key=dc6zaTOxFJmzC",  
-			type: "GET",
-			success: function(response) {
-				console.log(response.data[0]);
-			}
+	// See if text is grabbed 
+	console.log(a); 
+
+	// Generate button function 
+	function renderButton() {
+
+	var b = $("<button>").text(a);
 
 
-		})
+	// Add button to btn-group div
+	$(".bcontainer").append(b);		
 
-	});
+	}
 
-	console.log(actions); 
+
+	renderButton(); 
+
+
+
+	// $(".bcontainer").append(b); 
+	// $.ajax({
+
+			// url: "http://api.giphy.com/v1/gifs/search?q=" + $(".form-control").val() + "&api_key=dc6zaTOxFJmzC",  
+			// type: "GET",
+			// success: function(response) {
+			// 	console.log(response.data[0]);
+			// }
 	
 
-}); 
+	})
+
+});
+     
