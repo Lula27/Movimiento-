@@ -7,22 +7,28 @@ $(document).ready(function() {
 		 // displayMovieInfo function re-renders the HTML to display the appropriate content
       function displayGiffInfo() {
 
-        // var movie = $(this).attr("data-name");
-        // var queryURL = "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&r=json";
+       		var action = $(this).data("actions"); 
 
-        // // Creates AJAX call for the specific movie button being clicked
-        // $.ajax({
-        //   url: queryURL,
-        //   method: "GET"
-        // }).done(function(response) {
+			var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
+   		       action + "&api_key=dc6zaTOxFJmzC&limit=10";
 
-          // YOUR CODE GOES HERE!!!
+   		  // var queryURL = "http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC";   
 
-        // });
+        	// Perform AJAX request with queryURL
+        	$.ajax({
+        		url: queryURL, 
+        		method: "GET"
+        	}).done(function(response) {
 
-      }
+        		$("#bcontainer").append('<div>'); 
 
+        	// console.log(actions);
 
+        	}); 
+
+		}
+
+		
 		function renderButtons() {
 
 			$("#btn-group").empty(); 
@@ -69,6 +75,7 @@ $(document).ready(function() {
 
 		// Call renderButtons function to display initial buttons
 		renderButtons(); 
+
 
 
 }); 
