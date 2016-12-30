@@ -13,13 +13,15 @@ $(document).ready(function(giftastic) {
 	var a = $(".form-control").val(); 
 
 	// See if text is grabbed 
-	console.log(a); 
+	// console.log(a); 
 
 	// Generate button function 
 	function renderButton() {
 
 	var b = $("<button>").text(a);
 
+	// Add attribute to jazz up botton 
+	b.addClass("btn btn-default");
 
 	// Add button to btn-group div
 	$(".bcontainer").append(b);		
