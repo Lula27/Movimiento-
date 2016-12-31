@@ -77,5 +77,11 @@ $(document).ready(function() {
 		renderButtons(); 
 
 
+// Another way to make an AJAX call:
+
+
+
+
+
 
 }); 

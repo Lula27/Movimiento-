@@ -33,16 +33,48 @@ $(document).ready(function(giftastic) {
 	}); 
 
 
-	// Generate Giffs after clicking on buttons -not working...why?!
-	$('#maker').click(function(makegiff) {
+	// Generate Giffs after clicking on buttons -not working b/c it's a child element. 
+	// I'm not quite sure how to access the newly generated buttons so I'll test out Giff generator with dummy button.
+	$('#maker').on('click', function() {
+		var dance = $(this).data("dance");
+		var queryURL = 'http://api.giphy.com/v1/gifs/search?q=' + dance + '&api_key=dc6zaTOxFJmzC&limit=10';
 
-		makegiff.preventDefault()
-		alert("Hello"); 
+		$.ajax({
+			url: queryURL,
+			method: 'GET'
+		})
+		.done(function(response){
+			// store api object in a variable
+			var results = response.data;
+			console.log(results); 
 
-	});  
+			// Loop through movements
+			for (var i = 0; i < results.length; i++) {
+
+				// div where gif images will be stored
+				var gifDiv = $('<div class="output">');
+
+				// post ratings for giffs 
+				var rating = results[i].rating;
+
+				// post rating onto page
+				var p = $('<p>').text("Rating: " + rating);
+
+				// work with giff images-
+				var danceImage = $('<img>')
+				danceImage.attr('src', results[i].images.fixed_height.url);
+
+				gifDiv.append(p); 
+				gifDiv.append(danceImage);
+
+				$('#giffs-here').append(gifDiv);
+			}
 
 
+		}); 
 
+
+	});
 
 
 
