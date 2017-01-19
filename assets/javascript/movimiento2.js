@@ -1,10 +1,10 @@
 $(document).ready(function(giftastic) { 
 
 
-	$('#mbutton').click(function(buttons) {
-
+	$('#mbutton').click(function(event) {
+		console.log("Hi");
 	// Prevent page from refreshing!
-	buttons.preventDefault()
+	event.preventDefault()
 		
 	// recognizes value of text written in form 
 	var a = $('.form-control').val().trim(); 
@@ -18,10 +18,9 @@ $(document).ready(function(giftastic) {
 	var b = $('<button>').text(a);
 
 	// Add attribute to jazz up botton 
-	b.addClass('btn btn-default');
+	b.addClass('btn btn-default maker');
 
-	// Add ID
-	$(b).attr('id', 'maker')
+	// 
 
 	// Add button to btn-group div
 	$('.bcontainer').append(b);		
@@ -35,10 +34,11 @@ $(document).ready(function(giftastic) {
 
 	// Generate Giffs after clicking on buttons -not working b/c it's a child element. 
 	// I'm not quite sure how to access the newly generated buttons so I'll test out Giff generator with dummy button.
-	$('#maker').on('click', function() {
-		var a = $('.form-control').val().trim(); 
-		var a = $(this).data(a);
-		var queryURL = 'http://api.giphy.com/v1/gifs/search?q=dance+&api_key=dc6zaTOxFJmzC';
+	$(document).on("click", ".maker", function() {                  /*looking for event inside whole document so that when new buttons are made, they will do something*/ 
+		console.log("Hi from line 38!"); 
+		var verb = $(this).text();        /*referring to previous elment that caused event to happen; text() w/o arguements retreives text*/ 
+		console.log(verb); 
+		var queryURL = 'http://api.giphy.com/v1/gifs/search?q=' + verb + '+&api_key=dc6zaTOxFJmzC';
 
 		$.ajax({
 			url: queryURL,
@@ -48,6 +48,9 @@ $(document).ready(function(giftastic) {
 			// store api object in a variable
 			var results = response.data;
 			console.log(results); 
+
+			// Empty out div where gifs show up 
+			$('#giffs-here').empty()
 
 			// Loop through movements
 			for (var i = 0; i < results.length; i++) {
