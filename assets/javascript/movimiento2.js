@@ -7,7 +7,7 @@ $(document).ready(function(giftastic) {
 	buttons.preventDefault()
 		
 	// recognizes value of text written in form 
-	var a = $('.form-control').val(); 
+	var a = $('.form-control').val().trim(); 
 
 	// See if text is grabbed 
 	// console.log(a); 
@@ -36,8 +36,9 @@ $(document).ready(function(giftastic) {
 	// Generate Giffs after clicking on buttons -not working b/c it's a child element. 
 	// I'm not quite sure how to access the newly generated buttons so I'll test out Giff generator with dummy button.
 	$('#maker').on('click', function() {
-		var dance = $(this).data("dance");
-		var queryURL = 'http://api.giphy.com/v1/gifs/search?q=' + dance + '&api_key=dc6zaTOxFJmzC&limit=10';
+		var a = $('.form-control').val().trim(); 
+		var a = $(this).data(a);
+		var queryURL = 'http://api.giphy.com/v1/gifs/search?q=dance+&api_key=dc6zaTOxFJmzC';
 
 		$.ajax({
 			url: queryURL,
