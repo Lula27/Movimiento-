@@ -47,7 +47,7 @@ $(document).ready(function(giftastic) {
 		.done(function(response){
 			// store api object in a variable
 			var results = response.data;
-			// console.log(results); 
+	
 
 			// Empty out div where gifs show up 
 			$('#giffs-here').empty()
