@@ -23,3 +23,8 @@ background: linear-gradient(to left, #1D2B64 , #F8CDDA); /* W3C, IE 10+/ Edge, F
 
  	font-size: 500%; 
  }
+
+ .myform {
+ 	margin-left: 10%
+ 	padding: 2%;  
+ }

@@ -2,7 +2,7 @@ $(document).ready(function(giftastic) {
 
 
 	$('#mbutton').click(function(event) {
-		console.log("Hi");
+		// console.log("Hi");
 	// Prevent page from refreshing!
 	event.preventDefault()
 		
@@ -35,9 +35,9 @@ $(document).ready(function(giftastic) {
 	// Generate Giffs after clicking on buttons -not working b/c it's a child element. 
 	// I'm not quite sure how to access the newly generated buttons so I'll test out Giff generator with dummy button.
 	$(document).on("click", ".maker", function() {                  /*looking for event inside whole document so that when new buttons are made, they will do something*/ 
-		console.log("Hi from line 38!"); 
+		// console.log("Hi from line 38!"); 
 		var verb = $(this).text();        /*referring to previous elment that caused event to happen; text() w/o arguements retreives text*/ 
-		console.log(verb); 
+		// console.log(verb); 
 		var queryURL = 'http://api.giphy.com/v1/gifs/search?q=' + verb + '+&api_key=dc6zaTOxFJmzC';
 
 		$.ajax({
@@ -47,7 +47,7 @@ $(document).ready(function(giftastic) {
 		.done(function(response){
 			// store api object in a variable
 			var results = response.data;
-			console.log(results); 
+			// console.log(results); 
 
 			// Empty out div where gifs show up 
 			$('#giffs-here').empty()
