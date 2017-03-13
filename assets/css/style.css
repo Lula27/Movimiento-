@@ -3,7 +3,9 @@ body{
 background: #1D2B64; /* fallback for old browsers */
 background: -webkit-linear-gradient(to left, #1D2B64 , #F8CDDA); /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to left, #1D2B64 , #F8CDDA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-                
+
+margin: 10px; 
+
  }
 
  #movemaker {
@@ -27,4 +29,8 @@ background: linear-gradient(to left, #1D2B64 , #F8CDDA); /* W3C, IE 10+/ Edge, F
  .myform {
  	margin-left: 10%
  	padding: 2%;  
+ }
+
+ #giffs-here {
+ 	margin-left: 30%; 
  }
